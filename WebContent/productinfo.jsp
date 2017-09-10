@@ -25,12 +25,12 @@
 		ResultSet rs = stmt.executeQuery(query);
 		while (rs.next()) {
 	%>
-	<div class="panel panel-body " style="margin-bottom:30%">
+	<div class="panel panel-body " style="margin-bottom: 30%">
 		<div class="containetr fluid center-block">
 			<div class="row">
-			  <div class="col-md-2 col-sm-2 col-lg-2 text-center"></div>
-			
-			
+				<div class="col-md-1 col-sm-1 col-lg-1 text-center"></div>
+
+
 				<div class="col-md-2 col-sm-2 col-lg-2 text-center">
 					<div class="card" style="width: 20rem;">
 						<img class="card-img-top img-responsive img-thumbnail"
@@ -38,11 +38,11 @@
 						<div class="card-body">
 							<h4 class="card-title">
 								<%
-									out.println("Rs." + rs.getString("price"));
+									out.println("Rs." + rs.getString("price")+" /week");
 								%>
 							</h4>
 							<a
-								href="productinfo.jsp?pid=<%out.println(rs.getString("pdesc"));%>"
+								href="productinfo.jsp?pid=<%out.println("http://paypal.com");%>"
 								style="margin-bottom: 10px;" class="btn btn-primary">Take On
 								Rent</a>
 						</div>
@@ -51,16 +51,20 @@
 
 
 
-				<div class="col-md-6 col-sm-6 col-lg-6 text-justify">Product
-					Description The BenQ GW2406Z monitor features design and simplified
-					functionality. Make a delightful addition to your home and enjoy
-					visual pleasure and optimal eye comfort with the BenQ’s eye-caring
-					technology. Gear up for an unforgettable gaming experience with a
-					response time of 14 .
-			   </div>
+				<div class="col-md-6 col-sm-6 col-lg-6 text-justify">
+					<% out.println(rs.getString("pdesc")); %>
+                   <br> <br> <br>
+					<ul>
+						<li>HD TV</li>
+						<li>1 * USB</li>
+						<li>1080p FHD</li>
+						<li>Good sound Quality</li>
+						
+					</ul>
+				</div>
 			</div>
-			
-			
+
+
 			<div class="col-md-2 col-sm-2 col-lg-2 text-center"></div>
 		</div>
 	</div>
