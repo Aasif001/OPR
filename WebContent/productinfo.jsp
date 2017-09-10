@@ -4,17 +4,12 @@
 <%@page import="com.mysql.jdbc.Connection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+<!-- Navigation file included -->
+
 <%@ include file="nav.jsp"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-	<%
+<%
 		String id = request.getParameter("pid");
 		Connection conn;
 		Statement stmt;
@@ -24,7 +19,18 @@
 		String query = "select * from product where pid='" + id + "' ";
 		ResultSet rs = stmt.executeQuery(query);
 		while (rs.next()) {
-	%>
+%>
+
+<!-- JDBC connection END -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- Product Designing Started from here -->
 	<div class="panel panel-body " style="margin-bottom: 30%">
 		<div class="containetr fluid center-block">
 			<div class="row">
@@ -42,7 +48,7 @@
 								%>
 							</h4>
 							<a
-								href="productinfo.jsp?pid=<%out.println("http://paypal.com");%>"
+								href="https://www.sandbox.paypal.com/cgi-bin/webscr#/checkout/login"
 								style="margin-bottom: 10px;" class="btn btn-primary">Take On
 								Rent</a>
 						</div>
@@ -53,18 +59,19 @@
 
 				<div class="col-md-6 col-sm-6 col-lg-6 text-justify">
 					<% out.println(rs.getString("pdesc")); %>
-                   <br> <br> <br>
+					<br> <br> <br>
 					<ul>
 						<li>HD TV</li>
 						<li>1 * USB</li>
 						<li>1080p FHD</li>
 						<li>Good sound Quality</li>
-						
+
 					</ul>
 				</div>
 			</div>
+			<!-- Product Designing ENDS here -->
 
-
+			<!-- Free space for col-2 here -->
 			<div class="col-md-2 col-sm-2 col-lg-2 text-center"></div>
 		</div>
 	</div>
@@ -72,6 +79,11 @@
 	<%
 		}
 	%>
+
+	<!-- While loop ends here -->
+
+
+	<!-- Footer started from here -->
 	<%@ include file="footer.html"%>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -79,5 +91,6 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
+	<!-- Footer ENDS here -->
 </body>
 </html>
