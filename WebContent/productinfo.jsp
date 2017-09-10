@@ -3,7 +3,9 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="com.mysql.jdbc.Connection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ include file="nav.jsp"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,23 +14,66 @@
 </head>
 <body>
 
-<% 
-Connection conn;
-Statement stmt;
+	<%
+		String id = request.getParameter("pid");
+		Connection conn;
+		Statement stmt;
+		DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+		conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root", "");
+		stmt = (Statement) conn.createStatement();
+		String query = "select * from product where pid='" + id + "' ";
+		ResultSet rs = stmt.executeQuery(query);
+		while (rs.next()) {
+	%>
+	<div class="panel panel-body " style="margin-bottom:30%">
+		<div class="containetr fluid center-block">
+			<div class="row">
+			  <div class="col-md-2 col-sm-2 col-lg-2 text-center"></div>
+			
+			
+				<div class="col-md-2 col-sm-2 col-lg-2 text-center">
+					<div class="card" style="width: 20rem;">
+						<img class="card-img-top img-responsive img-thumbnail"
+							src="<%out.println(rs.getString("purl"));%>" alt="Card image cap">
+						<div class="card-body">
+							<h4 class="card-title">
+								<%
+									out.println("Rs." + rs.getString("price"));
+								%>
+							</h4>
+							<a
+								href="productinfo.jsp?pid=<%out.println(rs.getString("pdesc"));%>"
+								style="margin-bottom: 10px;" class="btn btn-primary">Take On
+								Rent</a>
+						</div>
+					</div>
+				</div>
 
-DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-conn = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root", "");
-stmt = (Statement)conn.createStatement();
-String query = "select * from product";
-ResultSet rs=stmt.executeQuery(query);
 
-while(rs.next())
-{
-     out.println(rs.getString("pid"));	
-     out.println(rs.getString("price"));	
-     out.println(rs.getString("qty"));	
-}
-%>
 
+				<div class="col-md-6 col-sm-6 col-lg-6 text-justify">Product
+					Description The BenQ GW2406Z monitor features design and simplified
+					functionality. Make a delightful addition to your home and enjoy
+					visual pleasure and optimal eye comfort with the BenQ’s eye-caring
+					technology. Gear up for an unforgettable gaming experience with a
+					response time of 14 .
+			   </div>
+			</div>
+			
+			
+			<div class="col-md-2 col-sm-2 col-lg-2 text-center"></div>
+		</div>
+	</div>
+
+	<%
+		}
+	%>
+	<%@ include file="footer.html"%>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
