@@ -66,7 +66,8 @@ stmt = (Statement)conn.createStatement();
 	
 	int[] pid=new int[12];
     String[] purl=new String[12];
-	String sql = "SELECT pid,purl from product order by pid ASC limit 12";
+    String[] pname=new String[12];
+	String sql = "SELECT pid,purl,pname from product order by pid ASC limit 12";
 	ResultSet rs = stmt.executeQuery(sql);
 	double i=0;
 	while(rs.next())
@@ -82,6 +83,7 @@ stmt = (Statement)conn.createStatement();
        while(rs.next()) {
 		pid[j]=rs.getInt("pid");
 		purl[j]=rs.getString("purl");
+		pname[j]=rs.getString("pname");
 		j++;
 		
     }
@@ -110,7 +112,7 @@ stmt = (Statement)conn.createStatement();
 						<img class="card-img-top img-responsive img-thumbnail"
 							src="<% out.println(purl[arr_no]); %>" alt="Card image cap">
 						<div class="card-body">
-							<h4 class="card-title">hello</h4>
+							<h4 class="card-title"><% out.println(pname[arr_no]); %></h4>
 							<a href="productinfo.jsp?pid=<% out.println(pid[arr_no]); %>" style="margin-bottom:10px;" class="btn btn-primary">Take On Rent</a>
 						</div>
 					</div>
