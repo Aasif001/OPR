@@ -57,7 +57,8 @@ public class Login extends HttpServlet {
 				if (rs.getString("email").equals(em) && rs.getString("pass").equals(pass)) {
 					
 					session.setAttribute("email",em);
-					out.println("\n <h1 style='color:green;text-align:center;font-size:16px;'> Logged-IN </h1>");
+					response.sendRedirect("index.jsp");
+					//out.println("\n <h1 style='color:green;text-align:center;font-size:16px;'> Logged-IN </h1>");
 
 				} else {
 					out.println("\n <h1 style='color:red;text-align:center;font-size:16px;'> Sorry </h1> ");
