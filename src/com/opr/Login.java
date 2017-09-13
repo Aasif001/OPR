@@ -39,34 +39,31 @@ public class Login extends HttpServlet {
 		HttpSession session=request.getSession();
 		String em = request.getParameter("em");
 		String pass = request.getParameter("pass");
+		
 		try {
 			response.setContentType("text/html");
 			Connection conn;
 			ResultSet rs;
 			Statement stmt;
-
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root", "");
 			stmt = conn.createStatement();
 			String query = "select email,pass from registration where email='" + em + "' ";
-
 			rs = stmt.executeQuery(query);
 			while (rs.next()) {
-
 				if (rs.getString("email").equals(em) && rs.getString("pass").equals(pass)) {
-					
-					session.setAttribute("email",em);
-					response.sendRedirect("index.jsp");
-					//out.println("\n <h1 style='color:green;text-align:center;font-size:16px;'> Logged-IN </h1>");
 
+					session.setAttribute("email", em);
+					response.sendRedirect("index.jsp");
+					// out.println("\n <h1
+					// style='color:green;text-align:center;font-size:16px;'>
+					// Logged-IN </h1>");
 				} else {
 					out.println("\n <h1 style='color:red;text-align:center;font-size:16px;'> Sorry </h1> ");
 				}
 			}
 
 			stmt.close();
-
 			conn.close();
 
 		} catch (SQLException e) {
