@@ -51,8 +51,7 @@
 						%>		
 						<li><a href="#">Product</a></li>
 						<li><a href="#">AboutUs</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Vendor</a></li>
+						<li><a href="vendor.jsp">VendorLogIn</a></li>
 						<%
 						  if(session.getAttribute("email")!=null)
 						  {
