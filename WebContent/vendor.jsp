@@ -25,22 +25,24 @@
 					class="profile-img-card img-circle center-block"
 					src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
 				<p id="profile-name" class="profile-name-card"></p>
-				<form class="form-signin">
-					<span id="reauth-email" class="reauth-email"></span> <input
-						type="email" id="inputEmail" class="form-control"
-						placeholder="Email address" required autofocus> <input
-						type="password" id="inputPassword" class="form-control"
-						placeholder="Password" required>
+				<form class="form-signin" action="VendorLogin" method="POST">
+					<span id="reauth-email" class="reauth-email"></span>
+					 <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="em" required autofocus>
+					
+					<input type="password" id="inputPassword" class="form-control" name="pass" placeholder="Password" required>
+					
 					<div id="remember" class="checkbox">
 						<label> <input type="checkbox" value="remember-me">
 							Remember me
 						</label>
 					</div>
+					
 					<button class="btn btn-lg btn-primary btn-block btn-signin"
 						type="submit">Sign in</button>
+						
 				</form>
-				<a href="#" style="text-decoration: none;"><button class="btn btn-lg btn-primary btn-block btn-signin"
-						type="submit">Register</button></a>
+				<a href="#" style="text-decoration: none;"><button
+						class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Register</button></a>
 				<a href="#" class="forgot-password text-right"> Forget password?
 				</a>
 			</div>
