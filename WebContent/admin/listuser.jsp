@@ -49,7 +49,6 @@ th{text-align: center;}
 							<th>Password</th>
 							<th>Gender</th>
 							<th>Country</th>
-							<th>Delete</th>
 							<th colspan="3">Action</th>
 						</tr>
 					</thead>
@@ -66,10 +65,9 @@ th{text-align: center;}
 							<td><%=rs.getString("pass")%></td>
 							<td><%=rs.getString("gender")%></td>
 							<td><%=rs.getString("country")%></td>
-							<td><%=rs.getString("country")%></td>
 							<td><input type="radio" name="deluser"></td>
-							<td><a class="btn btn-danger" href="deluser.jsp?<%=rs.getString("fname")%>">Delete</a></td>
-							<td><a class="btn btn-info" href="deluser.jsp?<%=rs.getString("fname")%>">Update</a></td>
+							<td><a class="btn btn-danger" href="deluser.jsp?<%=rs.getString("email")%>">Delete</a></td>
+							<td><a class="btn btn-info" href="updateuser.jsp?email=<%=rs.getString("email")%>">Update</a></td>
 						</tr>
 						<%
 							}
