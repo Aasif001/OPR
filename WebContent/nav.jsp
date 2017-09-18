@@ -23,9 +23,9 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-</head>	
-	
-<div class="container" style="width:100%">
+</head>
+
+<div class="container" style="width: 100%">
 	<div class="row">
 		<div class="col-xl-* col-sm-12">
 			<nav class="navbar navbar-default">
@@ -39,26 +39,22 @@
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="index.jsp">Home</a></li>
 						<%
-						  if(session.getAttribute("email")!=null)
-						  {
-							  out.println("<li><a href='profile.jsp''>Profile</a></li>"); 
-						  }
-						  else
-						  { 
-						    out.println("<li><a href='#' data-target='#myModal' data-toggle='modal'>Login</a></li>");
-						    out.println("<li><a href='#' data-target='#myModel2' data-toggle='modal'>Registration</a></li>");
-						  }
-						%>		
+							if (session.getAttribute("email") != null) {
+								out.println("<li><a href='profile.jsp''>Profile</a></li>");
+							} else {
+								out.println("<li><a href='#' data-target='#myModal' data-toggle='modal'>Login</a></li>");
+								out.println("<li><a href='#' data-target='#myModel2' data-toggle='modal'>Registration</a></li>");
+							}
+						%>
 						<li><a href="#">Product</a></li>
 						<li><a href="#">AboutUs</a></li>
 						<li><a href="vendor.jsp">VendorLogIn</a></li>
 						<%
-						  if(session.getAttribute("email")!=null)
-						  {
-						     out.println("<li><a style='font-weight:bold;color:#337ab7;' href='logout.jsp'>Logout</a></li>");
-						  }
+							if (session.getAttribute("email") != null) {
+								out.println("<li><a style='font-weight:bold;color:#337ab7;' href='logout.jsp'>Logout</a></li>");
+							}
 						%>
-						
+
 					</ul>
 					<form class="navbar-form navbar-right" role="search">
 						<div class="form-group">
@@ -92,6 +88,7 @@
 					<div style="margin-left: 20px; margin-right: 20px;" class="row">
 						<div class="col-sd-2">
 							<div class="form-group">
+
 								<label for="email">Email address:</label> <input type="email"
 									class="form-control" id="email" name="em">
 							</div>
@@ -102,14 +99,19 @@
 									class="form-control" id="pwd" name="pass">
 							</div>
 						</div>
-						<div class="row" style="margin-bottom:4%;">
+						<div class="row" style="margin-bottom: 4%;">
 							<div class="col-md-6 col-sd-6 text-center">
-								<button type="submit" style="width:100%" class="btn btn-default"><strong>LOGIN</strong></button>
+								<button type="submit" style="width: 100%"
+									class="btn btn-default">
+									<strong>LOGIN</strong>
+								</button>
 							</div>
 
 
 							<div class="col-md-6 col-sd-6 text-center">
-								<button type="reset" style="width:100%" class="btn btn-default"><strong>CLEAR</strong></button>
+								<button type="reset" style="width: 100%" class="btn btn-default">
+									<strong>CLEAR</strong>
+								</button>
 							</div>
 						</div>
 
@@ -141,14 +143,16 @@
 					<div style="margin-left: 20px; margin-right: 20px;" class="row">
 						<div class="col-sd-2">
 							<div class="form-group">
-								<label for="firstName">First Name</label> <input type="text" pattern="[a-zA-Z\s]+"
-									class="form-control" id="firstName" name="fname" required>
+								<label for="firstName">First Name</label> <input type="text"
+									pattern="[a-zA-Z\s]+" class="form-control" id="firstName"
+									name="fname" required>
 							</div>
 						</div>
 						<div class="col-sd-1">
 							<div class="form-group">
-								<label for="lastName">Last Name</label> <input type="text" pattern="[a-zA-Z \s]+"
-									class="form-control" id="lastName" name="lname" required>
+								<label for="lastName">Last Name</label> <input type="text"
+									pattern="[a-zA-Z \s]+" class="form-control" id="lastName"
+									name="lname" required>
 							</div>
 						</div>
 
@@ -162,8 +166,8 @@
 						<div class="col-sd-1">
 							<div class="form-group">
 								<label for="mobile">Mobile</label> <input type="tel"
-									pattern="\d*" maxlength="10" minlength="10" class="form-control" id="mobile"
-									name="mobile" required>
+									pattern="\d*" maxlength="10" minlength="10"
+									class="form-control" id="mobile" name="mobile" required>
 							</div>
 						</div>
 
@@ -182,7 +186,7 @@
 
 
 
-						<div class="row text-center" style="margin-bottom:4%">
+						<div class="row text-center" style="margin-bottom: 4%">
 							<div class="col-md-6 col-sd-6 text-center">
 								<select class="custom-select" name="gender" required>
 									<option value="male" selected>Male</option>
@@ -201,14 +205,19 @@
 
 
 						</div>
-						<div class="row" style="margin-bottom:4%;">
+						<div class="row" style="margin-bottom: 4%;">
 							<div class="col-md-6 col-sd-6 text-center">
-								<button type="submit" style="width:100%" class="btn btn-default"><strong>REGISTRATION</strong></button>
+								<button type="submit" style="width: 100%"
+									class="btn btn-default">
+									<strong>REGISTRATION</strong>
+								</button>
 							</div>
 
 
 							<div class="col-md-6 col-sd-6 text-center">
-								<button type="reset" style="width:100%" class="btn btn-default"><strong>CLEAR</strong></button>
+								<button type="reset" style="width: 100%" class="btn btn-default">
+									<strong>CLEAR</strong>
+								</button>
 							</div>
 						</div>
 
