@@ -26,6 +26,12 @@ th{text-align: center;}
 <%@ include file="adminnav.jsp"%>
 <body>
 	<%
+	    
+          if(session.getAttribute("utype")!="ADMIN")
+          {
+        	  response.sendRedirect("adminlogin.jsp");
+          }
+
 		Connection conn;
 		Statement stmt;
 		ResultSet rs;
@@ -56,6 +62,10 @@ th{text-align: center;}
 
 						<%
 							while (rs.next()) {
+								if(rs.getString("utype").equalsIgnoreCase("ADMIN"))
+								{
+									continue;
+								}
 						%>
 						<tr class="active">
 							<td><%=rs.getString("fname")%></td>
