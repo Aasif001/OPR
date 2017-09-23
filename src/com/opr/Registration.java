@@ -50,7 +50,7 @@ public class Registration extends HttpServlet {
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root", "");
 			stmt = conn.createStatement();
-			String query = "insert into registration values('"+fname+"','"+lname+"','"+email+"','"+mobile+"','"+pass+"','"+repass+"','"+gender+"','"+country+"')";
+			String query = "insert into registration values('"+fname+"','"+lname+"','"+email+"','"+mobile+"','"+pass+"','"+repass+"','"+gender+"','"+country+"','Normal')";
 			int status=stmt.executeUpdate(query);
 			if(status>0)
 			{

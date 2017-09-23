@@ -6,7 +6,7 @@
       <a class="navbar-brand" href="#">ADMIN</a>
     </div>
     <ul class="nav navbar-nav">
-			<li class="active"><a href="#">Home</a></li>
+			<li class="active"><a href="adminpanel.jsp">Home</a></li>
 			<li><a href="#">AddProduct</a></li>
 			<li><a href="listuser.jsp">ListUser</a></li>
 			<li><a href="listproduct.jsp">ListProduct</a></li>
