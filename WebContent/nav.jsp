@@ -56,9 +56,9 @@
 						%>
 
 					</ul>
-					<form class="navbar-form navbar-right" role="search">
+					<form action="search.jsp" class="navbar-form navbar-right" role="search">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search">
+							<input type="text" name="ptype" class="form-control" placeholder="Search by category">
 						</div>
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</form>

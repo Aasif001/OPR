@@ -60,7 +60,7 @@ public class VendorLogin extends HttpServlet {
 					// style='color:green;text-align:center;font-size:16px;'>
 					// Logged-IN </h1>");
 				} else {
-					out.println("\n <h1 style='color:red;text-align:center;font-size:16px;'> Sorry </h1> ");
+					out.println("\n <h1 style='color:red;text-align:center;font-size:16px;'>Please Enter Valid Email Or Password </h1> ");
 				}
 			}
 
