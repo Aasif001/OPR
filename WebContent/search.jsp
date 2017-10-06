@@ -1,7 +1,5 @@
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.DriverManager"%>
+<%@ include file="nav.jsp"%>
+<%@ include file="db.jsp"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -10,17 +8,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<%@ include file="nav.jsp"%>
 <body>
 	<div class="row">
 		<div class="col-md-1 col-sm-1 col-lg-1 text-justify"></div>
 
 		<%
 			String ptype = request.getParameter("ptype");
-			Connection conn;
-			Statement stmt;
-			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root", "");
 			stmt = (Statement) conn.createStatement();
 			String query = "select * from product where ptype like '%" + ptype + "%'";
 			ResultSet rs = stmt.executeQuery(query);

@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="com.mysql.jdbc.Statement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="com.mysql.jdbc.Connection"%>
-
+<%@ include file="/db.jsp" %>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,15 +27,7 @@ th{text-align: center;}
           {
         	  response.sendRedirect("adminlogin.jsp");
           }
-
-		Connection conn;
-		Statement stmt;
-		ResultSet rs;
-
-		DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-		conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root", "");
-		stmt = (Statement) conn.createStatement();
-		rs = stmt.executeQuery("select * from registration");
+		ResultSet rs = stmt.executeQuery("select * from registration");
 	%>
 	<div class="container-fluide center-block">
 		<div class="row center-block">

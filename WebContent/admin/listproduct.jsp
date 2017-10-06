@@ -1,7 +1,4 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.DriverManager"%>
+<%@ include file="/db.jsp" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -23,12 +20,6 @@
 		if (session.getAttribute("utype") != "ADMIN") {
 			response.sendRedirect("adminlogin.jsp");
 		}
-		Connection conn;
-		Statement stmt;
-
-		DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-		conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root", "");
-		stmt = (Statement) conn.createStatement();
 	%>
 	<div class="panel panel-body centere-block">
 		<div class="container" style="margin-top: 30px;">

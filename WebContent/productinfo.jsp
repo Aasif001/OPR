@@ -1,7 +1,4 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="com.mysql.jdbc.Statement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="com.mysql.jdbc.Connection"%>
+<%@ include file="db.jsp" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
@@ -12,11 +9,6 @@
 <%
 		String type = "";
 		String id = request.getParameter("pid");
-		Connection conn;
-		Statement stmt;
-		DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-		conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root", "");
-		stmt = (Statement) conn.createStatement();
 		String query = "select * from product where pid='" + id + "' ";
 		ResultSet rs = stmt.executeQuery(query);
 		while (rs.next()) {
