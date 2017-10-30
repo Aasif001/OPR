@@ -54,8 +54,8 @@ public class VendorLogin extends HttpServlet {
 			while (rs.next()) {
 				if (rs.getString("email").equals(em) && rs.getString("pass").equals(pass)) {
 
-					session.setAttribute("email", em);
-					response.sendRedirect("VendorPanel.jsp");
+					session.setAttribute("type","Vendor");
+					response.sendRedirect("vendor/VendorPanel.jsp");
 					// out.println("\n <h1
 					// style='color:green;text-align:center;font-size:16px;'>
 					// Logged-IN </h1>");

@@ -48,12 +48,18 @@ public class Login extends HttpServlet {
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root", "");
 			stmt = conn.createStatement();
-			String query = "select email,pass from registration where email='" + em + "' ";
+			String query = "select email,pass,fname from registration where email='" + em + "' ";
 			rs = stmt.executeQuery(query);
 			while (rs.next()) {
-				if (rs.getString("email").equals(em) && rs.getString("pass").equals(pass)) {
+				String email=rs.getString("email");
+				String password=rs.getString("pass");
+				String fname=rs.getString("fname");
+				
+				if (em.equals(email) && password.equals(pass)) {
 
-					session.setAttribute("email", em);
+					session.setAttribute("type", "user");
+					session.setAttribute("email", email);
+					session.setAttribute("fname", fname);
 					response.sendRedirect("index.jsp");
 					// out.println("\n <h1
 					// style='color:green;text-align:center;font-size:16px;'>

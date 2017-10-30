@@ -8,17 +8,19 @@
 </head>
 <body>
 <%
-		if(session.getAttribute("email")!=null)
+		if(session.getAttribute("type")!=null)
 		{
-			//Remove all session on the server
-			  session.invalidate();
-			//Remove individual session from the server
-			// session.removeAttribute("email");
-			
-			  out.println("<li><a href='profile.jsp''>Profile</a></li>"); 
-			
-			response.sendRedirect("index.jsp");
-			
+			if(session.getAttribute("type").equals("user"))
+			{
+				 session.invalidate();
+				  out.println("<li><a href='profile.jsp''>Profile</a></li>"); 
+				 response.sendRedirect("index.jsp");
+			}
+			else
+			{
+				session.invalidate();
+				response.sendRedirect("vendorLogin.jsp");
+			}
 		}
 		else
 		{

@@ -27,7 +27,7 @@ th{text-align: center;}
           {
         	  response.sendRedirect("adminlogin.jsp");
           }
-		ResultSet rs = stmt.executeQuery("select * from registration");
+         rs = stmt.executeQuery("select * from registration");
 	%>
 	<div class="container-fluide center-block">
 		<div class="row center-block">

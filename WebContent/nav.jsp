@@ -39,18 +39,18 @@
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="index.jsp">Home</a></li>
 						<%
-							if (session.getAttribute("email") != null) {
+							if (session.getAttribute("type") != null) {
 								out.println("<li><a href='profile.jsp''>Profile</a></li>");
 							} else {
 								out.println("<li><a href='#' data-target='#myModal' data-toggle='modal'>Login</a></li>");
 								out.println("<li><a href='#' data-target='#myModel2' data-toggle='modal'>Registration</a></li>");
 							}
 						%>
-						<li><a href="#">Product</a></li>
-						<li><a href="#">AboutUs</a></li>
-						<li><a href="vendor.jsp">VendorLogIn</a></li>
+						<li><a href="index.jsp">Product</a></li>
+						<li><a href="aboutus.jsp">AboutUs</a></li>
+						<li><a href="vendorLogin.jsp">VendorLogIn</a></li>
 						<%
-							if (session.getAttribute("email") != null) {
+							if (session.getAttribute("type") != null) {
 								out.println("<li><a style='font-weight:bold;color:#337ab7;' href='logout.jsp'>Logout</a></li>");
 							}
 						%>
@@ -58,7 +58,7 @@
 					</ul>
 					<form action="search.jsp" class="navbar-form navbar-right" role="search">
 						<div class="form-group">
-							<input type="text" name="ptype" class="form-control" placeholder="Search by category">
+							<input type="text" name="ptype" class="form-control" placeholder="Search by category" required>
 						</div>
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</form>
@@ -90,13 +90,13 @@
 							<div class="form-group">
 
 								<label for="email">Email address:</label> <input type="email"
-									class="form-control" id="email" name="em">
+									class="form-control" id="email" name="em" required>
 							</div>
 						</div>
 						<div class="col-sd-2">
 							<div class="form-group">
 								<label for="pwd">Password:</label> <input type="password"
-									class="form-control" id="pwd" name="pass">
+									class="form-control" id="pwd" name="pass" required>
 							</div>
 						</div>
 						<div class="row" style="margin-bottom: 4%;">

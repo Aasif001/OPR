@@ -16,10 +16,10 @@
 			String ptype = request.getParameter("ptype");
 			stmt = (Statement) conn.createStatement();
 			String query = "select * from product where ptype like '%" + ptype + "%'";
-			ResultSet rs = stmt.executeQuery(query);
+			rs = stmt.executeQuery(query);
 			while (rs.next()) {
 		%>
-		<div class="col-md-2 col-sm-2 col-lg-2 text-justify style="width:auto">
+		<div class="col-md-2 col-sm-2 col-lg-2 text-justify style=" width:auto">
 			<a href="productinfo.jsp?pid=<%=rs.getString("pid")%>"
 				style="text-decoration: none;">
 				<div class="card" style="width: 20rem;">

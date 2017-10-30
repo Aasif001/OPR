@@ -10,7 +10,7 @@
 		String type = "";
 		String id = request.getParameter("pid");
 		String query = "select * from product where pid='" + id + "' ";
-		ResultSet rs = stmt.executeQuery(query);
+		rs = stmt.executeQuery(query);
 		while (rs.next()) {
 			
 			type = rs.getString("ptype");

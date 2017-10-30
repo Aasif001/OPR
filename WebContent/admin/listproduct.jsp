@@ -30,7 +30,7 @@
     String[] purl=new String[12];
     String[] pname=new String[12];
 	String sql = "SELECT pid,purl,pname from product order by pid ASC limit 12";
-	ResultSet rs = stmt.executeQuery(sql);
+     rs = stmt.executeQuery(sql);
 	double i=0;
 	while(rs.next())
 	{

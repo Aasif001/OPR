@@ -12,7 +12,7 @@
 			<div class=" col-md-4 col-sm-12">
 				<div class="container bg-primary">
 					<h3>
-						<mark>Product Result</mark>
+						<mark>OPR System</mark>
 					</h3>
 					<p class="text-justify lead text-capitalize">Best service
 						provider for online rental products</p>
@@ -37,7 +37,7 @@ stmt = (Statement)conn.createStatement(); */
     String[] purl=new String[12];
     String[] pname=new String[12];
 	String sql = "SELECT pid,purl,pname,price from product order by pid ASC limit 12";
-	ResultSet rs = stmt.executeQuery(sql);
+    rs = stmt.executeQuery(sql);
 	double i=0;
 	while(rs.next())
 	{

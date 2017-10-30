@@ -7,7 +7,9 @@
        <%
             Connection conn;
 			Statement stmt;
+			ResultSet rs;
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root", "");
 			stmt = (Statement) conn.createStatement();
+			
 		%>	

@@ -67,6 +67,13 @@ public class AdminAuth extends HttpServlet {
 				stmt.close();
 				conn.close();
 			}
+			
+			
+			if(!rs.next())
+			{
+				out.println("\n <h1 style='color:red;text-align:center;font-size:16px;'> Sorry! username OR password invalid. </h1> ");	
+			}
+			
 		}catch(SQLException e)
 		{
 			e.printStackTrace();
