@@ -8,9 +8,9 @@
 </head>
 <body>
 <%
-		if(session.getAttribute("type")!=null)
+		if(session.getAttribute("utype")!=null)
 		{
-			if(session.getAttribute("type").equals("user"))
+			if(session.getAttribute("utype").equals("user"))
 			{
 				 session.invalidate();
 				  out.println("<li><a href='profile.jsp''>Profile</a></li>"); 
@@ -24,7 +24,8 @@
 		}
 		else
 		{
-			out.print("Session already expired<a href='index.jsp'>Goto Home</a>");
+			session.invalidate();
+			out.print("Session expired<a href='index.jsp'>Goto Home</a>");
 		}
 %>					 
 

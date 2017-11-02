@@ -41,9 +41,9 @@
 
 		<!-- Specify URLs -->
 		<input type='hidden' name='cancel_return'
-			value='http://localhost:8080/OPR_SYSTEM/can.jsp' /> <input
+			value='http://localhost:8080/OPR_SYSTEM/cancel.jsp' /> <input
 			type='hidden' name='return'
-			value='http://localhost:8080/OPR_SYSTEM/succes.jsp' />
+			value='http://localhost:8080/OPR_SYSTEM/success.jsp' />
 	</form>
 
 <%	

@@ -41,7 +41,7 @@
 						type="submit">Sign in</button>
 						
 				</form>
-				<a href="#" style="text-decoration: none;"><button
+				<a href="vendor_registration.jsp" style="text-decoration: none;"><button
 						class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Register</button></a>
 				<a href="#" class="forgot-password text-right"> Forget password?
 				</a>

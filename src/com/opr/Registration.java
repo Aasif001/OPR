@@ -54,7 +54,8 @@ public class Registration extends HttpServlet {
 			int status=stmt.executeUpdate(query);
 			if(status>0)
 			{
-				out.println("\n <h1 style='color:green;text-align:center;font-size:16px;'>You have successfully registred </h1>");
+				out.println("<script type = 'text/javascript'>alert('You have successfully Registered! Please Login to continue..');</script> ");
+				out.println("<script type = 'text/javascript'> window.location='http://localhost:8080/OPR_SYSTEM/index.jsp';</script> ");
 			}
 			else
 			{
