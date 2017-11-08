@@ -41,12 +41,13 @@
 						<%
 							if (session.getAttribute("type") != null) {
 								out.println("<li><a href='profile.jsp''>Profile</a></li>");
+								out.println("<li><a href='myorder.jsp''>MyOrder</a></li>");
 							} else {
 								out.println("<li><a href='#' data-target='#myModal' data-toggle='modal'>Login</a></li>");
 								out.println("<li><a href='#' data-target='#myModel2' data-toggle='modal'>Registration</a></li>");
 							}
 						%>
-						<li><a href="index.jsp">Product</a></li>
+						
 						<li><a href="aboutus.jsp">AboutUs</a></li>
 						<li><a href="vendorLogin.jsp">VendorLogIn</a></li>
 						<%

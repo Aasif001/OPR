@@ -8,9 +8,9 @@
 </head>
 <body>
 <%
-		if(session.getAttribute("utype")!=null)
+		if(session.getAttribute("type")!=null)
 		{
-			if(session.getAttribute("utype").equals("user"))
+			if(session.getAttribute("type").equals("user"))
 			{
 				 session.invalidate();
 				  out.println("<li><a href='profile.jsp''>Profile</a></li>"); 
@@ -25,7 +25,8 @@
 		else
 		{
 			session.invalidate();
-			out.print("Session expired<a href='index.jsp'>Goto Home</a>");
+			out.println("<script type = 'text/javascript'>alert('You have successfully Logged-out..');</script> ");
+			out.println("<script type = 'text/javascript'> window.location='http://localhost:8080/OPR_SYSTEM/vendorLogin.jsp';</script> ");
 		}
 %>					 
 

@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.apple.dnssd.TXTRecord"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -21,8 +22,9 @@
   String tnxid=request.getParameter("tx");
   String email=session.getAttribute("email").toString();
   String fname=session.getAttribute("fname").toString();
+  java.util.Date date2=new java.util.Date();
   
-  String sql="INSERT INTO ordertbl(pid,pname,email,fname,status,tnxid,amt,cc) values('"+pid+"','"+pname+"','"+email+"','"+fname+"','"+status+"','"+tnxid+"',"+amt+",'"+cc+"')";
+  String sql="INSERT INTO ordertbl(pid,pname,odate,email,fname,status,tnxid,amt,cc) values('"+pid+"','"+pname+"','"+new SimpleDateFormat("YYYY-M-d").format(date2)+"','"+email+"','"+fname+"','"+status+"','"+tnxid+"',"+amt+",'"+cc+"')";
   stmt=conn.createStatement();
   int res=stmt.executeUpdate(sql);
   

@@ -65,7 +65,8 @@ public class Login extends HttpServlet {
 					// style='color:green;text-align:center;font-size:16px;'>
 					// Logged-IN </h1>");
 				} else {
-					out.println("\n <h1 style='color:red;text-align:center;font-size:16px;'> Sorry </h1> ");
+					out.println("<script type = 'text/javascript'>alert('Username or Password does not match..');</script> ");
+					out.println("<script type = 'text/javascript'> window.location='http://localhost:8080/OPR_SYSTEM/index.jsp';</script> ");
 				}
 			}
 

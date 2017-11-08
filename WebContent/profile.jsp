@@ -33,7 +33,7 @@
 <h1 class="text-center text-primary"><i>Profile Page</i></h1>
    <div style="margin-bottom:50px;"></div>	
 	<div class="container">
-	   <form action="" >
+	   <form class="form-signin" action="profileupdate" method="POST" >
 		<div class="row">
 			<div class="col=sm-12 col-md-6 col-ld-6">
 				<div class="form-group">
@@ -67,7 +67,7 @@
 						<span class="input-group-addon"> 
 						<i	class="glyphicon glyphicon-envelope"></i>
 						</span> <input class="form-control" placeholder="Email Address"
-							name="em" type="text" readonly value="<%=rs.getString("email") %>" >
+							name="email" type="text" readonly value="<%=rs.getString("email") %>" >
 					 </div>
 				</div>
 				</div>
@@ -103,7 +103,7 @@
 						<span class="input-group-addon"> 
 						<i	class="glyphicon glyphicon-lock"></i>
 						</span> <input class="form-control" placeholder="Re-type Password"
-							name="rpass" type="password" >
+							name="repass" type="password" >
 					 </div>
 				</div>
 				</div>
